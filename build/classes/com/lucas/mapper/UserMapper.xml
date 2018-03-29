@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lucas.mapper.UserMapper">
+	<select id="getListUser" resultType="com.lucas.bean.User">
+		select * from user
+	</select>
+	<insert id="insertUser" parameterType="com.lucas.bean.User">
+		insert into user values(#{uid},#{uname},#{upwd},#{uemail})
+	</insert>
+	<delete id="deleteUser" parameterType="String">
+		delete  from user where uid=#{uid}
+	</delete>
+	<update id="modifyUser" parameterType="com.lucas.bean.User">
+		update user set uname=#{uname},uemail=#{uemail} where uid=#{uid}
+	</update>
+</mapper> 
